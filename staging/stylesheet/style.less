@@ -1,0 +1,38 @@
+@import "faola.less";
+
+body {
+	font: 14px "Helvetica Neue", sans-serif;
+	font-weight:400;
+	color:#fff;
+	margin:0;
+	div {
+		margin:20px auto;
+		width:200px;
+		text-align:center;
+	}
+	#processor span, #buttons button {
+		float:left;
+		line-height:38px;
+		width:100%;
+	}
+	#processor {
+		.light (@color:@color) { background: lighten(@color,10); }
+		.dark (@color:@color) { background: darken(@color,10); }
+		//
+		.lighter { .light(); }
+		.normal { background:@color; }
+		.darker { .dark(); }
+	}
+	#buttons {
+		button {
+			cursor:pointer;
+			margin:20px 0 0;
+			font-size:14px;
+			font-family: "Helvetica Neue", sans-serif;
+			font-weight:400;
+		}
+		.simple, .glossy, .shiny {
+			margin:5px 0 0;
+		}
+	}
+}
