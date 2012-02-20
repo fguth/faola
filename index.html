@@ -16,47 +16,61 @@
   </head>
   <body>
     
-    <h1>Faola</h1>
-    <p>Faola is a powerful framework for styling buttons in an easy and (really) fast way. You choose your button style and we give you the stylesheet+class (no images!) to apply all over your project. Yes, it's that simple.</p>
+    <header>
+      <h1><b>f.aola</b> is a helpful tool for styling buttons in an easy and fast way. You type in a color and we give you the css (no images!) to apply all over your project. <b>Yes, it's that simple.</b></h1>
+    </header>
     
-    <div id="picker">
+    <section id="picker">
       <div class="step">
-        <h2>Button style</h2>
+        <div class="choose">
+          <input type="color" name="basecolor" />
+        </div>
         <p>
-          You can choose one of the four options of buttons.
-          Each one have its own hover and active states style.
+          Type in the base color to be applied on the
+          button style. Only hex values are accepted.
         </p>
       </div>
       
       <div class="step">
-        <h2>Border roundness</h2>
         <p>
           You can choose the roundness of your button from
           one of the options on the side. We do not allow
           custom values yet.
         </p>
+        <div id="borders" class="choose">
+          <button class="">None</button>
+          <button class="">2px</button>
+          <button class="">4px</button>
+          <button class="">8px</button>
+          <button class="">12px</button>
+          <button class="">24px</button>
+        </div>
       </div>
       
       <div class="step">
-        <h2>Base color</h2>
         <p>
-          You can choose one of the colors or type in your
-          own hex value. All the rest is done by us.
-          Feels like magic.
+          Choose one of the options of buttons.
+          Each one have its own hover and active states style.
         </p>
+        <div id="buttons" class="choose">
+          <button class="">Text</button>
+          <button class="">Text</button>
+          <button class="">Text</button>
+          <button class="">Text</button>
+        </div>
       </div>
-      
-      <div id="preview"></div>
-      
+            
       <div class="step">
-        <h2>Done? Download your css file!</h2>
+        <h2>Done?</h2>
         <p>
           All you need to do now is to load the stylesheet on
           your project and apply the class "faola" wherever you
           want to see your button styled.
         <p>
       </div>
-    </div>
+    </section>
+    
+    <footer></footer>
   
   </body>
 </html>
