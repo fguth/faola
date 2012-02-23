@@ -2,33 +2,35 @@
 @import "reset";
 @import "bootstrap";
 
+
+@StartColor: #2f2928;
+@EndColor: #3c3533;
 body {
 	width:700px;
 	margin:0 auto;
-	background: rgb(47,41,40); /* Old browsers */
-	background: -moz-linear-gradient(top,  rgba(47,41,40,1) 0%, rgba(60,53,51,1) 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(47,41,40,1)), color-stop(100%,rgba(60,53,51,1))); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top,  rgba(47,41,40,1) 0%,rgba(60,53,51,1) 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top,  rgba(47,41,40,1) 0%,rgba(60,53,51,1) 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top,  rgba(47,41,40,1) 0%,rgba(60,53,51,1) 100%); /* IE10+ */
-	background: linear-gradient(top,  rgba(47,41,40,1) 0%,rgba(60,53,51,1) 100%); /* W3C */
+	background: @StartColor; /* Old browsers */
+	background: -moz-linear-gradient(top,  @StartColor 0%, @EndColor 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,@StartColor), color-stop(100%,@EndColor)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  @StartColor 0%,@EndColor 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  @StartColor 0%,@EndColor 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  @StartColor 0%,@EndColor 100%); /* IE10+ */
+	background: linear-gradient(top,  @StartColor 0%,@EndColor 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2f2928', endColorstr='#3c3533',GradientType=0 ); /* IE6-9 */
 	color:#fff;
 	font-family:"Helvetica Neue", helvetica, Arial, sans-serif;
 	h1 {
 		float:left;
 		font-size:24px;
-		font-weight:100;
-		line-height:36px;
+		line-height:34px;
 		letter-spacing:1px;
-		text-align:justify;
 		b:first-child {
 			font-size:38px;
 			font-style:italic;
 		}
 	}
 	h1, p {
-		text-shadow: 0px 2px 1px #000;
+		font-weight:100;
+		letter-spacing:1px;
 	}
 	p {
 		margin:0;
@@ -47,15 +49,133 @@ body {
 			border-top: 1px solid fade(#473f3d,50);
 			p {
 				float:right;
-				width:350px;
+				width:250px;
 				font-size:13px;
-				font-weight:100;
-				letter-spacing:1px;
+				line-height:18px;
 			}
 			.choose, h2 {
 				float:left;
 				margin:0;
-				width:300px;
+				width:auto;
+			}
+			ul {
+				float:right !important;
+			}
+			.choose {
+				input, li, li a {
+					cursor:pointer;
+					float:left;
+				}
+				input {
+					padding:15px 15px 13px 28px;
+					text-transform:uppercase;
+					font-weight:bold;
+					width:98px;
+					outline:none;
+					background:lighten(@StartColor,20) url("../images/sprites.png") no-repeat -250px center;
+					border:none;
+					font-size:22px;
+					.border-radius(4px);
+					color:darken(@StartColor,3);
+					border:1px solid darken(@StartColor,7);
+					@shadow: 0 1px 0 0 lighten(@StartColor,10), inset 0 1px 6px 0 darken(@StartColor,10);
+					.box-shadow(@shadow);
+					&:focus {
+						
+					}
+				}
+				img {
+					margin:15px 0 0 15px;
+				}
+				li {
+					a {
+						width:59px;
+						.transition(all 0.25s ease);
+						display:block;
+						line-height:51px;
+						border:1px solid darken(@StartColor,15);
+						border-left:none;
+						border-right:1px solid fade(darken(@StartColor,1),80);
+						background:lighten(@StartColor,5) url('../images/sprites.png') no-repeat 0 16px;
+						@shadow: inset 0 1px 0 0 lighten(@StartColor,15), 0 1px 2px 0 darken(@StartColor,7);
+						.box-shadow(@shadow);	
+						text-indent:-9999px;				
+					}
+					#none { background-position:0 16px; }
+					#two { background-position:-40px 16px; }
+					#four { background-position:-80px 16px; }
+					#eight { background-position:-120px 16px; }
+					#twelve { background-position:-160px 16px; }
+					#twenty { background-position:-200px 16px; }
+					
+					.current {
+						.transition(none);
+						background:lighten(@StartColor,3) url('../images/sprites.png') no-repeat 0 16px;
+						@shadow: inset 0 1px 3px 0 darken(@StartColor,10), 0 1px 0 0 lighten(@StartColor,5);
+						.box-shadow(@shadow);
+						&:hover {
+							.transition(none);
+							background:lighten(@StartColor,3) url('../images/sprites.png') no-repeat 0 16px;
+							@shadow: inset 0 1px 3px 0 darken(@StartColor,10), 0 1px 0 0 lighten(@StartColor,5);
+							.box-shadow(@shadow);							
+						}
+					}
+					
+					&:first-child {
+						a {
+							width:60px;
+							-moz-border-radius-topleft: 4px;
+							-moz-border-radius-topright: 0px;
+							-moz-border-radius-bottomright: 0px;
+							-moz-border-radius-bottomleft: 4px;
+							-webkit-border-radius: 4px 0px 0px 4px;
+							border-radius: 4px 0px 0px 4px;
+							border-left:1px solid darken(@StartColor,15);					
+						}
+					}
+					&:last-child {
+						a {
+							width:60px;
+							-moz-border-radius-topleft: 0px;
+							-moz-border-radius-topright: 4px;
+							-moz-border-radius-bottomright: 4px;
+							-moz-border-radius-bottomleft: 0px;
+							-webkit-border-radius: 0px 4px 4px 0px;
+							border-radius: 0px 4px 4px 0px;
+							border-right:1px solid darken(@StartColor,15);
+						}
+					}
+					&:hover {
+						a {
+							.transition(all 0.25s ease);
+							background:lighten(@StartColor,7) url('../images/sprites.png') no-repeat 0 16px;
+						}
+						#none { background-position:0 16px; }
+						#two { background-position:-40px 16px; }
+						#four { background-position:-80px 16px; }
+						#eight { background-position:-120px 16px; }
+						#twelve { background-position:-160px 16px; }
+						#twenty { background-position:-200px 16px; }
+					}
+					&:active {
+						a {
+							.transition(none);
+							background:lighten(@StartColor,1) url('../images/sprites.png') no-repeat 0 16px;
+							@shadow: inset 0 1px 3px 0 darken(@StartColor,10), 0 1px 0 0 lighten(@StartColor,5);
+							.box-shadow(@shadow);	
+						}
+					}
+				}
+				button {
+					width:164px;
+					border:none;
+					padding:16px 0;
+					text-align:center;
+					margin:0 10px 0 0;
+					&:last-child {
+						margin:0;
+					}
+				}
 			}
 		}
 	}

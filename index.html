@@ -12,7 +12,9 @@
     <![endif]-->
     
     <link rel="stylesheet" type="text/css" media="all" href="assets/stylesheet/style.css">
+    <link rel="stylesheet/less" type="text/css" href="assets/faola/faola.less">
     <link rel="shortcut icon" href="assets/ico/favicon.ico">
+    
   </head>
   <body>
     
@@ -23,40 +25,25 @@
     <section id="picker">
       <div class="step">
         <div class="choose">
-          <input type="color" name="basecolor" />
+          <input type="text" name="basecolor" maxlength="6" pattern="^([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$" />
+          <img src="assets/images/converting.gif" />
         </div>
-        <p>
-          Type in the base color to be applied on the
-          button style. Only hex values are accepted.
-        </p>
+        <ul id="borders" class="choose">
+          <li><a id="none" class="border_none">None</a></li>
+          <li><a id="two" class="border_two">2px</a></li>
+          <li><a id="four" class="border_four current">4px</a></li>
+          <li><a id="eight" class="border_eight ">8px</a></li>
+          <li><a id="twelve" class="border_twelve">12px</a></li>
+          <li><a id="twenty" class="border_twenty">24px</a></li>
+        </ul>
       </div>
       
       <div class="step">
-        <p>
-          You can choose the roundness of your button from
-          one of the options on the side. We do not allow
-          custom values yet.
-        </p>
-        <div id="borders" class="choose">
-          <button class="">None</button>
-          <button class="">2px</button>
-          <button class="">4px</button>
-          <button class="">8px</button>
-          <button class="">12px</button>
-          <button class="">24px</button>
-        </div>
-      </div>
-      
-      <div class="step">
-        <p>
-          Choose one of the options of buttons.
-          Each one have its own hover and active states style.
-        </p>
         <div id="buttons" class="choose">
-          <button class="">Text</button>
-          <button class="">Text</button>
-          <button class="">Text</button>
-          <button class="">Text</button>
+          <button class="faola classic">Your text</button>
+          <button class="faola simple">Your text</button>
+          <button class="faola glossy">Your text</button>
+          <button class="faola shiny">Your text</button>
         </div>
       </div>
             
@@ -72,5 +59,9 @@
     
     <footer></footer>
   
+    <script type="text/javascript" src="assets/javascript/less-1.2.1.min.js"></script>
+    <script type="text/javascript" src="assets/javascript/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="assets/javascript/application.js"></script>
+    
   </body>
 </html>
