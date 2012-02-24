@@ -172,8 +172,12 @@ body {
 					padding:16px 0;
 					text-align:center;
 					margin:0 10px 0 0;
+					.transition(border-radius .45s ease);
 					&:last-child {
 						margin:0;
+					}
+					&:hover, &:active {
+						.transition(none);
 					}
 				}
 			}
@@ -188,10 +192,14 @@ body {
 			color:fade(#fff,60);
 			font-size:12px;
 			a {
-				color:#fff;
+				color:fade(#fff,80);
 				text-decoration:none;
 				font-weight:400;
 				letter-spacing:-0.1px;
+				&:hover {
+					text-decoration:underline;
+					color:fade(#fff,70);
+				}
 			}
 		}
 	}
