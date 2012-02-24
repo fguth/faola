@@ -37,7 +37,7 @@ app.generate = function() {
 }
 
 jQuery(function() {
-  $("#basecolor").blur(function(event) { 
+  $("#basecolor").keyup(function(event) { 
     app.setColor($(this).val()) 
   });
   
