@@ -1,44 +1,38 @@
-// Reset
-@import "reset";
-@import "bootstrap";
 
 
-@StartColor: #2f2928;
-@EndColor: #3c3533;
+				@import "reset";
+				@import "mixins";
+
+
+				@StartColor: #2f2928;
+				@EndColor: #3c3533;
+
+
 body {
 	width:700px;
 	margin:0 auto;
-	background: @StartColor; /* Old browsers */
-	background: -moz-linear-gradient(top,  @StartColor 0%, @EndColor 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,@StartColor), color-stop(100%,@EndColor)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top,  @StartColor 0%,@EndColor 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top,  @StartColor 0%,@EndColor 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top,  @StartColor 0%,@EndColor 100%); /* IE10+ */
-	background: linear-gradient(top,  @StartColor 0%,@EndColor 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2f2928', endColorstr='#3c3533',GradientType=0 ); /* IE6-9 */
+	#gradient > .vertical(@StartColor,@EndColor);
 	color:#fff;
 	font-family:"Helvetica Neue", helvetica, Arial, sans-serif;
-	h1 {
-		float:left;
-		font-size:24px;
-		line-height:34px;
-		letter-spacing:1px;
-		b:first-child {
-			font-size:38px;
-			font-style:italic;
-		}
-	}
-	h1, p {
-		font-weight:100;
-		letter-spacing:1px;
-	}
-	p {
-		margin:0;
-	}
 	header {
 		float:left;
 		padding:40px 0;
 		border-bottom: 1px solid fade(#282423,80);
+		h1 {
+			float:left;
+			font-size:24px;
+			line-height:34px;
+			letter-spacing:1px;
+			font-weight:100;
+			letter-spacing:1px;
+			b:first-child {
+				font-size:38px;
+				font-style:italic;
+			}
+		}
+	}
+	p {
+		margin:0;
 	}
 	#picker {
 		.step {
@@ -206,7 +200,7 @@ body {
 			float:right;
 		}
 		.twitter-share-button {
-			padding:1px;
+			padding:1px 0;
 			margin:0 10px 0 !important;
 			#gradient > .vertical(#ddd,#dedede);
 			.border-radius(3px);
@@ -214,8 +208,9 @@ body {
 	}
 }
 
-//
-// Faola basics
-@color:#889921;
-@BorderRadius:4px;
-@import "../faola/faola";
+
+				@color:#889921;
+				@BorderRadius:4px;
+				@import "../faola/faola";
+				
+				
