@@ -82,3 +82,4 @@ body #picker .step .choose button:hover,body #picker .step .choose button:active
 body footer{float:left;width:100%;padding:30px 0;border-top:1px solid rgba(71, 63, 61, 0.5);text-shadow:0px 1px 1px rgba(0, 0, 0, 0.5);}body footer p{float:left;color:rgba(255, 255, 255, 0.5);font-size:13px;font-weight:normal;letter-spacing:0;}body footer p span{padding:0 4px;}
 body footer p a{color:rgba(255, 255, 255, 0.7);text-decoration:none;-webkit-transition:all 0.25s ease;-moz-transition:all 0.25s ease;transition:all 0.25s ease;font-weight:bold;}body footer p a:hover{color:#fff;}
 body footer iframe{float:right;}
+body footer .twitter-share-button{margin:1px 10px 0 !important;}
