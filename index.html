@@ -2,17 +2,16 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Faola</title>
+    <title>Faola · a helpful tool for styling buttons in an easy and fast way</title>
     <meta name="robots" content="index, follow">
-    <meta name="keywords" content="">
-    <meta name="description" content="">  
+    <meta name="keywords" content="Faola, LESS, CSS3, HTML5, CSS, buttons, button, generator, menu, no images">
+    <meta name="description" content="Faola is a helpful tool for styling buttons in an easy and fast way. You type in a color and we give you the css (no images!) to apply all over your project. Yes, it's that simple.">  
     
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     
     <link rel="stylesheet" type="text/css" media="all" href="assets/stylesheet/style.css">
-    <link rel="stylesheet" type="text/css" href="assets/faola/faola.css">
     
     <style id="faola-inline-raw">
     </style>
@@ -31,7 +30,7 @@
       <div class="step">
         <div class="choose">
           <input type="text" name="basecolor" maxlength="6" pattern="^([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$" id="basecolor"/>
-          <img src="assets/images/converting.gif" />
+          <img src="assets/images/converting.gif" style="display:none;" />
         </div>
         <ul id="borders" class="choose">
           <li><a id="none"   data-val="0"  class="border_none">None</a></li>
@@ -52,7 +51,7 @@
         </div>
       </div>
             
-      <div class="step">
+      <div class="step" style="display:none;">
         <h2>Done?</h2>
         <p>
           All you need to do now is to load the stylesheet on
@@ -64,12 +63,13 @@
     
     <footer>
       <p>
-        <a href="http://github.com/fguth/faola" target="_blank">View on Github</a><span>·</span>Built by @<a href="http://twitter.com/fguth" target="_blank">fguth</a> and @<a href="http://twitter.com/matiasleidemer" target="_blank">matiasleidemer</a> <br /> Code licensed under the MIT License<span>·</span><a href="mailto:lfguth@gmail.com?subject=Contact from Faola" target="_blank">Contact</a>
+        <a href="http://github.com/fguth/faola" target="_blank">View on GitHub</a><span>·</span>Built by @<a href="http://twitter.com/fguth" target="_blank">fguth</a> and @<a href="http://twitter.com/matiasleidemer" target="_blank">matiasleidemer</a> <br /> Code licensed under the MIT License<span>·</span><a href="mailto:lfguth@gmail.com?subject=Contact from Faola" target="_blank">Contact</a>
       </p>
       
-      <iframe src="http://markdotto.github.com/github-buttons/github-btn.html?user=fguth&repo=faola&type=watch&count=true&size=large"
-        allowtransparency="true" frameborder="0" scrolling="0" width="130px" height="30px"></iframe>
-        
+      <!-- GitHub watchers button -->
+      <iframe src="http://markdotto.github.com/github-buttons/github-btn.html?user=fguth&repo=faola&type=watch&count=true&size=large" allowtransparency="true" frameborder="0" scrolling="0" width="130px" height="30px"></iframe>
+      
+      <!-- Twitter share button -->
       <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://fguth.github.com/faola" data-size="large" data-count="none">Tweet</a>
     </footer>
   

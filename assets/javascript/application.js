@@ -10,7 +10,7 @@ $("#borders li > a").live('click', function (event) {
 
 var app = {};
 
-app.color = "c64777";
+app.color = "889921";
 app.radius = 4;
 
 app.setColor = function(color) {
