@@ -1,6 +1,20 @@
-psds/
-staging/
-staging/*
-staging/index.html
-staging/stylesheet/style.css
-staging/stylesheet/style.less
+# IGNORE
+# -------------
+
+*.diff
+*.err
+*.orig
+*.log
+*.rej
+*.swo
+*.swp
+*.vi
+*~
+
+# OS & EDITOR FOLDERS
+# ----------------------------------
+
+.DS_Store
+thumbs.db
+psds
+staging
