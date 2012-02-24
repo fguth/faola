@@ -1,5 +1,6 @@
 psds/
 staging/
+staging/*
 staging/index.html
 staging/stylesheet/style.css
 staging/stylesheet/style.less
