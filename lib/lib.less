@@ -1,0 +1,63 @@
+// Border Radius
+.border-radius(@radius: 0) {
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+}
+
+// Drop shadows
+.box-shadow(@shadow: 0 1px 3px rgba(0,0,0,.25)) {
+  -webkit-box-shadow: @shadow;
+  -moz-box-shadow: @shadow;
+  box-shadow: @shadow;
+}
+
+// Transition
+.transition(@transition) {
+	-webkit-transition: @transition;
+	-moz-transition: @transition;
+	transition: @transition;
+}
+
+// Gradients
+#gradient {
+  .classic (@startColor: #fff, @endColor: #aaa) {
+    background-color: 	@endColor;
+    background-repeat: 	repeat-x;
+		background-image: 	-moz-linear-gradient(@startColor, @endColor);    
+		background-image: 	linear-gradient(@startColor, @endColor);
+		background-image: 	-webkit-linear-gradient(@startColor, @endColor);
+		background-image: 	-o-linear-gradient(@startColor, @endColor);    
+    background-image: 	-ms-linear-gradient(@startColor, @endColor);
+    background-image: 	-webkit-gradient(linear, left top, left bottom, color-stop(0%, @startColor), color-stop(100%, @endColor));
+    filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",@startColor,@endColor));
+    -ms-filter: %("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",@startColor,@endColor);
+  }
+	.shiny(@StartColor:#fff, @MiddleStartColor:#ddd, @MiddleEndColor:#ccc, @EndColor:#aaa) {
+		background-color:		@MiddleStartColor;
+		background-repeat: 	repeat-x;
+		background-image:		-moz-linear-gradient(top, @EndColor 0%, @MiddleEndColor 49.8%, @MiddleStartColor 50%, @StartColor 100%);
+		background-image:		linear-gradient(top, @EndColor 0%, @MiddleEndColor 49.8%, @MiddleStartColor 50%, @StartColor 100%);
+		background-image:		-webkit-linear-gradient(top, @EndColor 0%, @MiddleEndColor 49.8%, @MiddleStartColor 50%, @StartColor 100%);
+		background-image:		-o-linear-gradient(top, @EndColor 0%, @MiddleEndColor 49.8%, @MiddleStartColor 50%, @StartColor 100%);
+		background-image:		-ms-linear-gradient(top, @EndColor 0%, @MiddleEndColor 49.8%, @MiddleStartColor 50%, @StartColor 100%);
+		background-image:		-webkit-gradient(linear, right top, right bottom, color-stop(0%,@EndColor), color-stop(49.8%,@MiddleEndColor),color-stop(50%,@MiddleStartColor),color-stop(100%,@StartColor));
+		filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=@EndColor, endColorstr=@StartColor);	
+	}	
+}
+
+
+#text {
+	//Color light % from -100 to +100
+	.color (@color) when (lightness(@color) >= 85) and (lightness(@color) < 100) { color:darken(@color,80); }
+	.color (@color) when (lightness(@color) >= 75) and (lightness(@color) < 85) 	{ color:darken(@color,50); }
+	.color (@color) when (lightness(@color) >= 40) and (lightness(@color) < 75) 	{ color:#fff; }
+	.color (@color) when (lightness(@color) >= 20) and (lightness(@color) < 40) 	{ color:lighten(@color,80); }
+	.color (@color) when (lightness(@color) >= 0) 	and (lightness(@color) < 20) 	{ color:lighten(@color,90); }
+	
+	//Text shadow according to color lightness
+	// First text-shadow is a hack for text view on chrome
+	.shadow (@color) when (lightness(@color) >= 90) and (lightness(@color) < 100) { text-shadow: 0 0 0 transparent, 0px 1px 1px rgba(255,255,255,0.8); }
+	.shadow (@color) when (lightness(@color) >= 75) and (lightness(@color) < 90) { text-shadow: 0 0 0 transparent, 0px 1px 1px rgba(255,255,255,0.6); }
+	.shadow (@color) when (lightness(@color) >= 25) and (lightness(@color) < 75)  { text-shadow: 0 0 0 transparent, 0px -1px 1px rgba(0,0,0,0.5); }
+	.shadow (@color) when (lightness(@color) >= 0)  and (lightness(@color) < 25)  { text-shadow: 0 0 0 transparent, 0px -1px 1px rgba(0,0,0,0.8); }
+}

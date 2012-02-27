@@ -1,150 +1,82 @@
-// Border Radius
-.border-radius(@radius: 5px) {
-  -moz-border-radius: @radius;
-  border-radius: @radius;
-}
+/*
+	-----------------------------------------
+	Faola by Filipe Guth and Matias Leidemer
+	https://github.com/fguth/faola
+	-----------------------------------------
+*/
 
-// Drop shadows
-.box-shadow(@shadow: 0 1px 3px rgba(0,0,0,.25)) {
-  -webkit-box-shadow: @shadow;
-  -moz-box-shadow: @shadow;
-  box-shadow: @shadow;
-}
 
-// Transitions
-.transition(@transition) {
-	-webkit-transition: @transition;
-	-moz-transition: @transition;
-	transition: @transition;
-}
+@import "lib.less";
 
-// Buttons
-.button(@color: #ff0000, @textColor: #fff, @textShadow: 0 1px 1px rgba(255,255,255,.75), @fontSize: 13px, @padding: 9px 15px 10px, @borderRadius: 6px) {
-  display: inline-block;
-  #gradient > .vertical(@color,darken(saturate(@color,10),10));
-  padding: @padding;
-  text-shadow: @textShadow;
-  color: @textColor;
-  font-size: @fontSize;
-  line-height: 20px;
-  .border-radius(@borderRadius);
-  @shadow: inset 0 1px 0 rgba(255,255,255,.2), inset 0 -1px 0 rgba(0,0,0,.2), 0 1px 2px rgba(0,0,0,.25);
-  .box-shadow(@shadow);
-  &:hover {
-    background-position: 0 -15px;
-    color: @textColor;
-    text-decoration: none;
-  }
-}
+@color:#c64777;
+@BorderRadius:4px;
 
-// Add an alphatransparency value to any background or border color (via Elyse Holladay)
-#translucent {
-  .background(@color: @white, @alpha: 1) {
-    background-color: hsla(hue(@color), saturation(@color), lightness(@color), @alpha);
+//
+//
+//Faola function
+.faola {
+	.border-radius(@BorderRadius);
+	#text > .color(@color);
+	#text > .shadow(@color);
+	&:hover {
+
 	}
-	.border(@color: @white, @alpha: 1) {
-		border-color: hsla(hue(@color), saturation(@color), lightness(@color), @alpha);
-		background-clip: padding-box;
+	&:active {
+		color:rgba(255,255,255,0.9);
 	}
 }
 
-// Gradients
-#gradient {
-  .vertical (@startColor: #555, @endColor: #333) {
-    background-color: @endColor;
-    background-repeat: repeat-x;
-    background-image: -khtml-gradient(linear, left top, left bottom, from(@startColor), to(@endColor)); /* Konqueror */
-    background-image: -moz-linear-gradient(@startColor, @endColor); /* FF 3.6+ */
-    background-image: -ms-linear-gradient(@startColor, @endColor); /* IE10 */
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, @startColor), color-stop(100%, @endColor)); /* Safari 4+, Chrome 2+ */
-    background-image: -webkit-linear-gradient(@startColor, @endColor); /* Safari 5.1+, Chrome 10+ */
-    background-image: -o-linear-gradient(@startColor, @endColor); /* Opera 11.10 */
-    filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",@startColor,@endColor)); /* IE6 & IE7 */
-    -ms-filter: %("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",@startColor,@endColor); /* IE8+ */
-    background-image: linear-gradient(@startColor, @endColor); /* the standard */
-  }
-	.teste(@StartColor:#555, @MiddleStartColor:#4a4a4a, @MiddleEndColor:#333, @EndColor:#222) {
-		background: @EndColor; /* Old browsers */
-		background: -moz-linear-gradient(top,  @EndColor 0%, @MiddleEndColor 50%, @MiddleStartColor 51%, @StartColor 100%); /* FF3.6+ */
-		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,@EndColor), color-stop(50%,@MiddleEndColor), color-stop(51%,@MiddleStartColor), color-stop(100%,@StartColor)); /* Chrome,Safari4+ */
-		background: -webkit-linear-gradient(top,  @EndColor 0%,@MiddleEndColor 50%,@MiddleStartColor 51%,@StartColor 100%); /* Chrome10+,Safari5.1+ */
-		background: -o-linear-gradient(top,  @EndColor 0%,@MiddleEndColor 50%,@MiddleStartColor 51%,@StartColor 100%); /* Opera 11.10+ */
-		background: -ms-linear-gradient(top,  @EndColor 0%,@MiddleEndColor 50%,@MiddleStartColor 51%,@StartColor 100%); /* IE10+ */
-		background: linear-gradient(top,  @EndColor 0%,@MiddleEndColor 50%,@MiddleStartColor 51%,@StartColor 100%); /* W3C */
-		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1b3163', endColorstr='#336dc5',GradientType=0 ); /* IE6-9 */
+
+//
+//
+//Global styles
+.faola.classic, .faola.simple {
+	border:none;
+	text-shadow:none;
+	&:hover {
+		text-shadow: 0 0 0 transparent, 0px 1px 2px rgba(0,0,0,0.5);
 	}
 }
-
-// Opacity
-.opacity(@opacity: 100) {
-	filter: e(%("alpha(opacity=%d)", @opacity));
-	-khtml-opacity: @op / 100;
-	-moz-opacity: @op / 100;
-	opacity: @op / 100;
+.faola.glossy, .faola.shiny {
+	border:1px solid darken(@color,15);
+	border-bottom:1px solid darken(@color,22);
+}
+.faola.glossy, .faola.shiny {
+	@shadow: inset 0 1px 1px lighten(saturate(@color,20),20), inset 0 -1px 0 rgba(0,0,0,.1), 0 1px 2px rgba(0,0,0,.30);
+	.box-shadow(@shadow);
 }
 
 
-
-.clear {
-	clear:both;
-}
-.teste {
-	float:left;
-	margin:20px 5px;
-	width:200px;
-	height:99px;
-	color:#fff;
-	font: 14px "Helvetica Neue", sans-serif;
-	font-weight:400;
-	span {
-		float:left;
-		width:200px;
-		height:33px;
-		line-height:32px;
-		text-align:center;
-		color:#fff;
-	}
-	.button {
-		margin:5px 0 0;
-		height:44px;
-		line-height:42px;
-	}
-	.option-a {
-		margin:30px 0 0;
-	}
-	.option-b, .option-c, .option-d {
-		text-shadow: 0px -1px 1px rgba(0,0,0,0.3);
+//
+//
+//Individual styles
+.faola.classic {
+	background:@color;
+	&:hover{
+		background:darken(@color,6);
 	}
 }
-
-.um {
-	@color:#46a546;
-	.light (@color:@color) { background: lighten(@color,10); }
-	.dark (@color:@color) { background: darken(@color,10); }
-	
-	.normal { background:@color; }
-	.lighter { .light(); }
-	.darker { .dark(); }
-	
-	.button {
-		.border-radius(4px);
+.faola.simple {
+	#gradient > .classic (lighten(@color,10),darken(@color,7));
+	&:hover {
+		#gradient > .classic (lighten(@color,5),darken(@color,10));
+		.box-shadow(0 0 3px rgba(0,0,0,0.3));
 	}
-
-	.option-a { background:@color; }
-	.option-b {
-		#gradient > .vertical (lighten(@color,10),darken(@color,10));
+}
+.faola.glossy {
+	#gradient > .classic (lighten(@color,10),darken(@color,10));
+	&:hover {
+		#gradient > .classic (lighten(@color,5),darken(@color,14));
 	}
-	.option-c {
-		border:1px solid darken(@color,12);
-		#gradient > .vertical (lighten(@color,10),darken(@color,10));
-		@shadow: inset 0 1px 1px rgba(255,255,255,.4), inset 0 -1px 0 rgba(0,0,0,.1), 0 1px 2px rgba(0,0,0,.30);
-		.box-shadow(@shadow);
-	}
-	.option-d {
-		border:1px solid darken(@color,12);
-		#gradient > .teste (darken(@color,10),darken(@color,3),lighten(@color,1),lighten(@color,10));
-		@shadow: inset 0 1px 1px lighten(saturate(@color,20),30), inset 0 -1px 0 rgba(0,0,0,.1), 0 1px 2px rgba(0,0,0,.30);
+	&:active {
+		#gradient > .classic (lighten(@color,1),darken(@color,10));
+		@shadow: inset 0 1px 6px darken(saturate(@color,20),30), inset 0 -1px 0 rgba(0,0,0,.1), 0 1px 2px rgba(0,0,0,.30);
 		.box-shadow(@shadow);
 	}
 }
-
+.faola.shiny {
+	#gradient > .shiny (darken(@color,10),darken(@color,3),lighten(@color,1),lighten(@color,10));
+	&:hover {
+		#gradient > .shiny (darken(@color,14),darken(@color,4),lighten(@color,1),lighten(@color,4));
+	}
+}
