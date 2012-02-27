@@ -55,8 +55,9 @@
 	.color (@color) when (lightness(@color) >= 0) 	and (lightness(@color) < 20) 	{ color:lighten(@color,90); }
 	
 	//Text shadow according to color lightness
-	.shadow (@color) when (lightness(@color) >= 90) and (lightness(@color) < 100) { text-shadow: 0px 1px 1px rgba(255,255,255,0.8); }
-	.shadow (@color) when (lightness(@color) >= 75) and (lightness(@color) < 90) { text-shadow: 0px 1px 1px rgba(255,255,255,0.6); }
-	.shadow (@color) when (lightness(@color) >= 25) and (lightness(@color) < 75)  { text-shadow: 0px -1px 1px rgba(0,0,0,0.5); }
-	.shadow (@color) when (lightness(@color) >= 0)  and (lightness(@color) < 25)  { text-shadow: 0px -1px 1px rgba(0,0,0,0.8); }
+	// First text-shadow is a hack for text view on chrome
+	.shadow (@color) when (lightness(@color) >= 90) and (lightness(@color) < 100) { text-shadow: 0 0 0 transparent, 0px 1px 1px rgba(255,255,255,0.8); }
+	.shadow (@color) when (lightness(@color) >= 75) and (lightness(@color) < 90) { text-shadow: 0 0 0 transparent, 0px 1px 1px rgba(255,255,255,0.6); }
+	.shadow (@color) when (lightness(@color) >= 25) and (lightness(@color) < 75)  { text-shadow: 0 0 0 transparent, 0px -1px 1px rgba(0,0,0,0.5); }
+	.shadow (@color) when (lightness(@color) >= 0)  and (lightness(@color) < 25)  { text-shadow: 0 0 0 transparent, 0px -1px 1px rgba(0,0,0,0.8); }
 }
