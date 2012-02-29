@@ -43,6 +43,17 @@
 		background-image:		-webkit-gradient(linear, right top, right bottom, color-stop(0%,@EndColor), color-stop(49.8%,@MiddleEndColor),color-stop(50%,@MiddleStartColor),color-stop(100%,@StartColor));
 		filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=@EndColor, endColorstr=@StartColor);	
 	}	
+	.shiny-active(@StartColor:#fff, @MiddleStartColor:#ddd, @MiddleEndColor:#ccc, @EndColor:#aaa) {
+		background-color:		@MiddleStartColor;
+		background-repeat: 	repeat-x;
+		background-image:		-moz-linear-gradient(top, @EndColor 0%, @MiddleEndColor 52.8%, @MiddleStartColor 53%, @StartColor 100%);
+		background-image:		linear-gradient(top, @EndColor 0%, @MiddleEndColor 52.8%, @MiddleStartColor 53%, @StartColor 100%);
+		background-image:		-webkit-linear-gradient(top, @EndColor 0%, @MiddleEndColor 52.8%, @MiddleStartColor 53%, @StartColor 100%);
+		background-image:		-o-linear-gradient(top, @EndColor 0%, @MiddleEndColor 52.8%, @MiddleStartColor 53%, @StartColor 100%);
+		background-image:		-ms-linear-gradient(top, @EndColor 0%, @MiddleEndColor 52.8%, @MiddleStartColor 53%, @StartColor 100%);
+		background-image:		-webkit-gradient(linear, right top, right bottom, color-stop(0%,@EndColor), color-stop(52.8%,@MiddleEndColor),color-stop(53%,@MiddleStartColor),color-stop(100%,@StartColor));
+		filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=@EndColor, endColorstr=@StartColor);	
+	}		
 }
 
 
