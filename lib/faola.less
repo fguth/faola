@@ -1,92 +1,76 @@
 /*
-	-----------------------------------------
-	Faola by Filipe Guth and Matias Leidemer
-	https://github.com/fguth/faola
-	-----------------------------------------
+  -----------------------------------------
+  Faola by Filipe Guth and Matias Leidemer
+  https://github.com/fguth/faola
+  -----------------------------------------
 */
 
 
 @import "lib.less";
 
+
+
+//---------------
+//Testing purpose
 @color:#889921;
 @BorderRadius:4px;
 
-//
-//
+
+
+//--------------
 //Faola function
 .faola {
-	.border-radius(@BorderRadius);
-	#text > .color(@color);
-	#text > .shadow(@color);
-	&:hover {
-
-	}
-	&:active {
-		color:rgba(255,255,255,0.8);
-	}
+  .border-radius(@BorderRadius);
+  #text > .color(@color);
+  #text > .shadow(@color);
+  &:active { color:rgba(255,255,255,0.8); }
 }
 
 
-//
-//
+
+//-------------
 //Global styles
 .faola.classic, .faola.simple {
-	border:none;
-	text-shadow:none;
-	&:hover {
-		text-shadow: 0 0 0 transparent, 0px 1px 2px rgba(0,0,0,0.5);
-	}
+  border:none;
+  text-shadow:none;
+  &:hover { text-shadow: 0 0 0 transparent, 0px 1px 2px rgba(0,0,0,0.5); }
 }
 .faola.glossy, .faola.shiny {
-	border:1px solid darken(@color,15);
-	border-bottom:1px solid darken(@color,22);
-	@shadow: inset 0 1px 1px lighten(saturate(@color,20),20), inset 0 -1px 0 rgba(0,0,0,.1), 0 1px 2px rgba(0,0,0,.30);
-	.box-shadow(@shadow);
-	&:active {
-		border:1px solid darken(@color,22);
-		@shadow: inset 0 2px 4px darken(saturate(@color,20),20), inset 0 -1px 0 rgba(0,0,0,.1), 0 1px 0 rgba(255,255,255,.1);
-		.box-shadow(@shadow);
-	}
+  border:1px solid darken(@color,15);
+  border-bottom:1px solid darken(@color,22);
+  @shadow: inset 0 1px 1px lighten(saturate(@color,20),20), inset 0 -1px 0 rgba(0,0,0,.1), 0 1px 2px rgba(0,0,0,.30);
+  .box-shadow(@shadow);
+  &:active {
+    border:1px solid darken(@color,22);
+    @shadow: inset 0 2px 4px darken(saturate(@color,20),20), inset 0 -1px 0 rgba(0,0,0,.1), 0 1px 0 rgba(255,255,255,.1);
+    .box-shadow(@shadow);
+  }
 }
 
 
-//
-//
+
+//-----------------
 //Individual styles
 .faola.classic {
-	background:@color;
-	&:hover{
-		background:darken(@color,6);
-	}
-	&:active {
-		background:darken(@color,12)
-;	}
+  background:@color;
+  &:hover{ background:darken(@color,6); }
+  &:active { background:darken(@color,12); }
 }
 .faola.simple {
-	#gradient > .classic (lighten(@color,10),darken(@color,7));
-	&:hover {
-		#gradient > .classic (lighten(@color,5),darken(@color,10));
-		.box-shadow(0 0 3px rgba(0,0,0,0.3));
-	}
-	&:active {
-		#gradient > .classic (lighten(@color,1),darken(@color,15));
-	}
+  #gradient > .classic (lighten(@color,10),darken(@color,7));
+  &:hover {
+    #gradient > .classic (lighten(@color,5),darken(@color,10));
+    .box-shadow(0 0 3px rgba(0,0,0,0.3));
+  }
+  &:active { #gradient > .classic (lighten(@color,1),darken(@color,15)); }
 }
 .faola.glossy {
-	#gradient > .classic (lighten(@color,10),darken(@color,10));
-	&:hover {
-		#gradient > .classic (lighten(@color,5),darken(@color,14));
-	}
-	&:active {
-		#gradient > .classic (lighten(@color,1),darken(@color,10));
-	}
+  #gradient > .classic (lighten(@color,10),darken(@color,10));
+  &:hover { #gradient > .classic (lighten(@color,5),darken(@color,14)); }
+  &:active { #gradient > .classic (lighten(@color,1),darken(@color,10)); }
 }
 .faola.shiny {
-	#gradient > .shiny (darken(@color,10),darken(@color,3),lighten(@color,1),lighten(@color,10));
-	&:hover {
-		#gradient > .shiny (darken(@color,14),darken(@color,4),lighten(@color,1),lighten(@color,4));
-	}
-	&:active {
-		#gradient > .shiny-active (darken(@color,16),darken(@color,6),lighten(@color,-2),lighten(@color,0));
-	}
+  #gradient > .shiny (darken(@color,10),darken(@color,3),lighten(@color,1),lighten(@color,10));
+  &:hover { #gradient > .shiny (darken(@color,14),darken(@color,4),lighten(@color,1),lighten(@color,4)); }
+  &:active { #gradient > .shiny-active (darken(@color,16),darken(@color,6),lighten(@color,-2),lighten(@color,0)); }
 }
