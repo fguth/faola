@@ -164,10 +164,11 @@ body {
 					}
 				}
 				button {
+				  float:left;
 					width:164px;
 					padding:16px 0;
 					text-align:center;
-					margin:0 10px 0 0;
+					margin:0 14px 0 0;
 					.transition(border-radius .45s ease);
 					&:last-child {
 						margin:0;
@@ -175,6 +176,9 @@ body {
 					&:hover, &:active {
 						.transition(none);
 					}
+				}
+				button.glossy:active, button.shiny:active {
+				  padding:17px 0 15px;
 				}
 			}
 		}
