@@ -1,16 +1,57 @@
 <!DOCTYPE HTML>
 <html lang="en">
   <head>
-    <title>Faola Testing</title>
+    <meta charset="utf-8">
+    <title>Faola Staging</title>
+    
+    <style>
+      body{font:14px "Helvetica Neue",sans-serif;font-weight:400;color:#fff;margin:0 auto;width:600px;}body div{margin:20px auto;width:200px;text-align:center;}
+      body .panel {float:left; margin:0; padding:20px 50px 50px;}
+      body .panel.dark {background:#3C3533;}
+      body #processor span,body #buttons button{float:left;line-height:38px;width:100%;}
+      body #processor .lighter{background:#adc32a;}
+      body #processor .normal{background:#889921;}
+      body #processor .darker{background:#636f18;}
+      body #buttons button{cursor:pointer;margin:20px 0 0;font-size:14px;font-family:"Helvetica Neue",sans-serif;font-weight:bold;padding:0 !important;}
+      body #buttons .simple,body #buttons .glossy,body #buttons .shiny{margin:5px 0 0;}
+    </style>
     
     <link rel="stylesheet/less" type="text/css" href="faola.less">
-    <script type="text/javascript" src="less/less-1.2.2.min.js"></script>
+    <script src="less/less-1.2.2.min.js" type="text/javascript"></script>
     
   </head>
-  
-  
   <body>
     
+    
+    <div class="panel">
+      <div id="processor">
+        <span class="lighter">Lightened</span>
+        <span class="normal">Original</span>
+        <span class="darker">Darkened</span>
+      </div>
+      <div id="buttons">
+        <button class="faola classic">Your text</button>
+        <button class="faola simple">Your text</button>
+        <button class="faola glossy">Your text</button>
+        <button class="faola shiny">Your text</button>
+      </div>
+    </div>
+    
+    
+    <div class="panel dark">
+      <div id="processor">
+        <span class="lighter">Lightened</span>
+        <span class="normal">Original</span>
+        <span class="darker">Darkened</span>
+      </div>
+      <div id="buttons">
+        <button class="faola classic">Your text</button>
+        <button class="faola simple">Your text</button>
+        <button class="faola glossy">Your text</button>
+        <button class="faola shiny">Your text</button>
+      </div>
+    </div>
+    
+    
   </body>
-  
 </html>
