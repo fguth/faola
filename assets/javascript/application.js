@@ -32,6 +32,7 @@ app.generate = function() {
   parser.parse(source, function(err, tree) { 
     var css = tree.toCSS();
     $("#faola-inline-raw").html(css);
+    $("#code-output").html(css);
   });
   
 }
